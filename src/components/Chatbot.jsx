@@ -26,14 +26,20 @@ const Chatbot = () => {
     if (msg.includes("price")) return "Please specify the product you're asking about.";
     if (msg.includes("return")) return "Our return policy lasts 30 days.";
     if (msg.includes("bye")) return "Goodbye! Have a great day!";
+    if (msg.includes("help")) return "Sure! What do you need help with?";
+    if (msg.includes("thanks") || msg.includes("thank you")) return "You're welcome! 😊";
+    if (msg.includes("order")) return "You can place an order through our website.";
+    if (msg.includes("shipping")) return "Shipping usually takes 3-5 business days.";
+    if (msg.includes("your name")) return "I'm Noire, your virtual assistant!";
+    if (msg.includes("joke")) return "Why did the scarecrow win an award? Because he was outstanding in his field! 😂";
     
     return "I'm not sure I understand. Can you rephrase?";
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 border rounded-xl shadow-lg p-4 bg-white">
-      <h1 className="text-xl font-bold mb-2">🧠 Noire Chatbot</h1>
-      <div className="h-80 overflow-y-auto border p-2 mb-2 rounded">
+    <div className=" mt-20 border rounded-xl shadow-lg p-4 bg-white h-[900px]">
+      <h1 className="text-xl font-bold mb-2">🧠 Chatbot</h1>
+      <div className="h-80 overflow-y-auto border p-2 mb-2 rounded h-[700px] mb-10">
         {messages.map((msg, idx) => (
           <div key={idx} className={`my-2 text-sm ${msg.sender === "user" ? "text-right" : "text-left"}`}>
             <span className={`inline-block px-3 py-2 rounded-lg ${msg.sender === "user" ? "bg-blue-100" : "bg-gray-100"}`}>
